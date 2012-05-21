@@ -1,0 +1,162 @@
+@import 'reset.css';
+@import 'grid.less';
+
+
+//////////
+// GRID //
+//////////
+
+/* Specify the number of columns and set column and gutter widths */
+@columns: 12;
+@column-width: 60;
+@gutter-width: 20;
+
+/* Remove the definition below for a pixel-based layout */
+@total-width: 100%;
+
+
+////////////
+// LAYOUT //
+////////////
+
+
+/////////////////
+// NARROW SITE //
+/////////////////
+html,body {
+	font-family:verdana,sans-serif;
+	background: #2E7FA5;
+}
+header#main-header {
+	background: black;
+}
+h1 {
+	font-family: "Adelle",serif;
+	font-weight:700;
+	font-size: 2em;
+	padding: 1em;
+	color: white;
+}
+	
+h2 {
+	font-family: "Adelle",serif;
+	font-size: 1.5em;
+	color: #666;
+	margin:0;
+	text-indent:0;
+	
+}
+header#main-header {
+	margin-bottom: 1em;
+}
+
+#main,
+#other {
+	.column(12);
+	margin-bottom: 1em;
+}
+
+/* Posts */
+.post-entry {
+	background:#fff;
+	margin-bottom:20px;
+	.edit-post {
+		float:right;
+	}
+	p {
+		color:#222;
+		font-size:0.875em; //14/16
+		line-height:1.4em;
+		margin-bottom:1em;
+		strong {
+			font-weight:bold;
+		}
+	}
+	h2 {
+		margin-bottom:.5em;
+		a {
+			color:black;
+			text-decoration:none;
+			line-height:1.4em;
+		}
+	}
+	section.post-content {
+		.row(12);	
+	}
+	.post-date {
+		p {
+			font-size:.75em;
+			span {
+				text-transform:uppercase;
+			}
+		}
+	}
+}
+
+///////////////
+// WIDE SITE //
+///////////////
+@media screen and (min-width: 720px) {
+
+/* main column & sidebar */
+body {
+	width:100%;
+	max-width:1200px;
+	margin:0 auto;
+	height:100%;
+}
+html, body {
+	background: none;
+}
+#main {
+	.column(8);
+}
+#other {
+	.column(4);
+}
+
+/* Posts */
+section.post-content {
+	.row(8);
+}
+article.post-entry {
+	.row(8);
+	margin-bottom:1em;
+	.post-wrapper {
+		.column(6,8);
+		.push(1);
+		h2 {
+			text-indent:0;
+			margin:0;
+			padding:0;
+		}
+		section.post-content {
+			.row(8);
+			p {
+				margin-bottom:1em;	
+			}
+			img {
+
+			}
+		}
+	}
+}
+.thumbnail-container {
+	.column(6,8);
+	.push(1);
+}
+
+#back-to-top-link, #nav-link {
+	display:none;
+}
+
+#page-bg {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:-10;
+	background:url('../images/test-bg2.jpg') repeat-x;
+} 
+}
