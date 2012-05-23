@@ -6,13 +6,22 @@
 // GRID //
 //////////
 
-/* Specify the number of columns and set column and gutter widths */
 @columns: 12;
 @column-width: 60;
 @gutter-width: 20;
 
-/* Remove the definition below for a pixel-based layout */
 @total-width: 100%;
+
+
+
+////////////
+// MIXINS	 //
+////////////
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
 
 
 ////////////
@@ -25,54 +34,80 @@
 /////////////////
 html,body {
 	font-family:verdana,sans-serif;
-	background: #2E7FA5;
+	font-size:16px;
+	background: #C6DEE9;
+	.column(12);
 }
-header#main-header {
-	background: black;
-}
-h1 {
-	font-family: "Adelle",serif;
-	font-weight:700;
-	font-size: 2em;
-	padding: 1em;
-	color: white;
-}
-	
-h2 {
-	font-family: "Adelle",serif;
-	font-size: 1.5em;
-	color: #666;
-	margin:0;
-	text-indent:0;
-	
-}
+
 header#main-header {
 	margin-bottom: 1em;
+	background: black;
+
+	h1 {
+		font-family: "Adelle",serif;
+		font-weight:700;
+		font-size: 2em;
+		padding: 1em;
+		color: white;
+	}
+	p {
+		color:white;
+		float:left;
+		display:none; // temporarily commented out
+	}
 }
 
 #main,
 #other {
-	.column(12);
+	.row(12);
 	margin-bottom: 1em;
 }
-
+hr {
+	border:none;
+	background:black;
+	height:1px;
+	margin-top:1.5em;
+}
+a.more-link {
+	display: block;
+	text-decoration:none;
+	width: auto;
+	background: #444;
+	margin-top:1em;
+	padding-top: .65em;
+	padding-bottom: .65em;
+	text-align: center;
+	color: white;
+	.rounded-corners(4px);
+}
+a.more-link:hover {
+	background:#555;
+}
 /* Posts */
 .post-entry {
+	.column(12,12);
 	background:#fff;
 	margin-bottom:20px;
 	.edit-post {
-		float:right;
+		
+	}
+	a {
+		color:red;
 	}
 	p {
 		color:#222;
 		font-size:0.875em; //14/16
-		line-height:1.4em;
+		line-height:1.5em;
 		margin-bottom:1em;
 		strong {
 			font-weight:bold;
 		}
 	}
 	h2 {
+		font-family: "Adelle",serif;
+		font-weight:400;
+		font-size: 1.5em;
+		color: #666;
 		margin-bottom:.5em;
 		a {
 			color:black;
@@ -80,16 +115,32 @@ header#main-header {
 			line-height:1.4em;
 		}
 	}
-	section.post-content {
-		.row(12);	
+	img {
+		width:100%;
+		margin-bottom:1em;
 	}
-	.post-date {
+	.post-content {
+	//	/*.row(12);*/	/* this was very, very bad */
+		a {
+			text-decoration:none;		
+		}
+	}
+	.post-date, .meta {
+		font-size:.75em;
 		p {
-			font-size:.75em;
 			span {
 				text-transform:uppercase;
 			}
 		}
+	}
+	.meta a {
+		text-decoration:none;
+	}
+}
+.post-entry {
+	.rounded-corners(4px);
+	.post-wrapper {
+		padding:2em;
 	}
 }
 
@@ -99,7 +150,7 @@ header#main-header {
 @media screen and (min-width: 720px) {
 
 /* main column & sidebar */
-body {
+/*body {
 	width:100%;
 	max-width:1200px;
 	margin:0 auto;
@@ -115,7 +166,7 @@ html, body {
 	.column(4);
 }
 
-/* Posts */
+/* Posts 
 section.post-content {
 	.row(8);
 }
@@ -126,9 +177,6 @@ article.post-entry {
 		.column(6,8);
 		.push(1);
 		h2 {
-			text-indent:0;
-			margin:0;
-			padding:0;
 		}
 		section.post-content {
 			.row(8);
@@ -158,5 +206,5 @@ article.post-entry {
 	height:100%;
 	z-index:-10;
 	background:url('../images/test-bg2.jpg') repeat-x;
-} 
+} */
 }
