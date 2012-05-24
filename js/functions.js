@@ -4,17 +4,13 @@ $('document').ready(function() {
 
 	$('.post-content a').each(function(index){
 
-		var $tempVar = $(this).html();
-
-		if ($tempVar.str().toLowerCase().indexOf("http") >= 0) {
+		if ($(this).text().toLowerCase().indexOf("http") >= 0) {
 
 			$('body').append(
 				$(this).html() + "<br />"
 			);
 
 		};
-
-		
 
 	});
 
