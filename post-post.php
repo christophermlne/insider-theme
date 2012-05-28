@@ -22,7 +22,7 @@
                 <hr>
         </section>
         <footer class="meta selective-hide">
-            <p><span>Filed Under: </span><b class=""><?php the_category('</b><b class="label label-warning">') ?></b> <span>By: </span><a href="#"><?php the_author(); ?></a></p>
+            <p><span>Filed Under: </span><b class=""><?php the_category('</b><b>') ?></b> <span>By: </span><a href="#"><?php the_author(); ?></a></p>
         </footer>
     </div>
 </article>

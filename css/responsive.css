@@ -16,10 +16,6 @@ body {
   font-family: verdana, sans-serif;
   font-size: 16px;
   background: #C6DEE9;
-  display: inline;
-  float: left;
-  width: 97.91666666666666%;
-  margin: 0 1.0416666666666665%;
 }
 header#main-header {
   margin-bottom: 1em;
@@ -28,9 +24,11 @@ header#main-header {
 header#main-header h1 {
   font-family: "Adelle", serif;
   font-weight: 700;
-  font-size: 2em;
-  padding: 1em;
+  font-size: 1.4em;
   color: white;
+  padding-left: 2em;
+  padding-top: .75em;
+  padding-bottom: .75em;
 }
 header#main-header p {
   color: white;
@@ -55,6 +53,9 @@ header#main-header p {
 #main:after,
 #other:after {
   clear: both;
+}
+#other {
+  background: #00354D;
 }
 hr {
   border: none;
@@ -86,6 +87,8 @@ a.more-link:hover {
   width: 97.91666666666666%;
   margin: 0 1.0416666666666665%;
   background: #fff;
+  /*background:#00354D;*/
+
   margin-bottom: 20px;
 }
 .post-entry a {
@@ -93,9 +96,11 @@ a.more-link:hover {
 }
 .post-entry p {
   color: #222;
+  /*color:#7FA0AF;*/
+
   font-size: 0.875em;
   line-height: 1.5em;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
 }
 .post-entry p strong {
   font-weight: bold;
@@ -109,6 +114,8 @@ a.more-link:hover {
 }
 .post-entry h2 a {
   color: black;
+  /*color:#58CFF5;*/
+
   text-decoration: none;
   line-height: 1.4em;
 }
@@ -141,14 +148,25 @@ a.more-link:hover {
 @media screen and (min-width: 720px) {
   /* main column & sidebar */
   body {
+    height: 100%;
+  }
+  body #page-wrap {
+    display: inline;
+    float: left;
+    width: 97.91666666666666%;
+    margin: 0 1.0416666666666665%;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    height: 100%;
+    padding-top: .5em;
   }
   html,
   body {
     background: none;
+  }
+  header#main-header #splash {
+    background: white;
+    height: 306px;
   }
   #main {
     display: inline;
@@ -168,14 +186,13 @@ a.more-link:hover {
     float: left;
     width: 96.875%;
     margin: 0 1.5625%;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
   }
   .post-entry .post-wrapper {
-    display: inline;
-    float: left;
-    width: 71.875%;
-    margin: 0 1.5625%;
-    margin-left: 9.374999999999998%;
+    padding: 2em;
+  }
+  #other {
+    min-height: 500px;
   }
   #back-to-top-link,
   #nav-link {
@@ -188,6 +205,6 @@ a.more-link:hover {
     width: 100%;
     height: 100%;
     z-index: -10;
-    background: url('../images/test-bg2.jpg') repeat-x;
+    background: url('../images/test-bg2.jpg') top center repeat-x;
   }
 }
