@@ -15,8 +15,14 @@
 
 		<!-- Main Body -->
 		<section id="main" role="main">
-			<?php get_template_part('loop','index'); ?>
-		</section>
+			<?php if(is_front_page()):   get_template_part( 'loop' , 'index'    ); ?>
+            <?php elseif(is_single()):   get_template_part( 'loop' , 'single'   ); ?>
+            <?php elseif(is_search()):   get_template_part( 'loop' , 'search'   ); ?>
+            <?php elseif(is_category()): get_template_part( 'loop' , 'category' ); ?>
+            <?php elseif(is_archive()):  get_template_part( 'loop' , 'archive'  ); ?>
+            <?php elseif(is_page()):     get_template_part( 'page' ); ?>
+            <?php endif; ?>		
+        </section>
 
 		<!-- Sidebar -->
 		<section id="other">
