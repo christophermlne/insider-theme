@@ -21,7 +21,7 @@ header#main-header {
   margin-bottom: 1em;
   background: black;
 }
-header#main-header h1 {
+header#main-header #main-nav h1 {
   font-family: "Adelle", serif;
   font-weight: 700;
   font-size: 1.4em;
@@ -29,8 +29,9 @@ header#main-header h1 {
   padding-left: 2em;
   padding-top: .75em;
   padding-bottom: .75em;
+  text-align: center;
 }
-header#main-header p {
+header#main-header #main-nav p {
   color: white;
   float: left;
   display: none;
@@ -173,12 +174,14 @@ a.more-link:hover {
     float: left;
     width: 64.58333333333334%;
     margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
   }
   #other {
     display: inline;
     float: left;
-    width: 97.91666666666666%;
+    width: 64.58333333333334%;
     margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
   }
   /* Posts */
   .post-entry {
@@ -205,6 +208,6 @@ a.more-link:hover {
     width: 100%;
     height: 100%;
     z-index: -10;
-    background: url('../images/test-bg2.jpg') top center repeat-x;
+    background: url('../images/test-bg2.jpg') #c3eaf1 top center repeat-x;
   }
 }

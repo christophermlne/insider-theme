@@ -33,19 +33,22 @@ html,body {
 header#main-header {
 	margin-bottom: 1em;
 	background: black;
-	h1 {
-		font-family: "Adelle",serif;
-		font-weight:700;
-		font-size: 1.4em;
-		color: white;
-		padding-left:2em;
-		padding-top:.75em;
-		padding-bottom:.75em;
-	}
-	p {
-		color:white;
-		float:left;
-		display:none;
+	#main-nav {
+		h1 {
+			font-family: "Adelle",serif;
+			font-weight:700;
+			font-size: 1.4em;
+			color: white;
+			padding-left:2em;
+			padding-top:.75em;
+			padding-bottom:.75em;
+			text-align:center;
+		}
+		p {
+			color:white;
+			float:left;
+			display:none;
+		}	
 	}
 }
 
@@ -151,7 +154,6 @@ a.more-link:hover {
 
 /* main column & sidebar */
 body {
-	
 	height:100%;
 	#page-wrap {
 		.column(12);
@@ -172,9 +174,11 @@ header#main-header {
 }
 #main {
 	.column(8);
+	.push(2);
 }
 #other {
-	.column(12);
+	.column(8);
+	.push(2);
 }
 
 /* Posts */
@@ -199,6 +203,6 @@ header#main-header {
 	width:100%;
 	height:100%;
 	z-index:-10;
-	background:url('../images/test-bg2.jpg') top center repeat-x;
+	background:url('../images/test-bg2.jpg') #C3EAF1 top center repeat-x;
 } 
 }

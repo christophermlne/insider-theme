@@ -18,7 +18,8 @@
                 <?php endif; ?>
                 <!-- END post featured image (not working yet) -->
 
-                <?php the_content('<span>Read Full Article</span>'); ?>
+                <?php /*the_content('<span>Read Full Article</span>');*/ ?>
+                <?php the_excerpt(); ?>
                 <hr>
         </section>
         <footer class="meta selective-hide">
